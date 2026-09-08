@@ -1,18 +1,27 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <div id="app"></div>
-    <script type="text/javascript">
-      const app = document.getElementById('app');
-      
-      const header = document.createElement('h1');
- 
-      const text = 'Develop. Preview. Ship.';
-      
-      const headerContent = document.createTextNode(text);
- 
-      header.appendChild(headerContent);
- 
-      app.appendChild(header);
+
+<head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19/?dev",
+        "react-dom/client": "https://esm.sh/react-dom@19/client?dev",
+        "react/jsx-runtime": "https://esm.sh/react/jsx-runtime?dev"
+      }
+    }
     </script>
-  </body>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel" data-presets="react" data-type="module">
+        import { createRoot } from 'react-dom/client';
+        const app = document.getElementById('app');
+        const root = createRoot(app);
+        root.render(<h1>Develop. Preview. Ship.</h1>);
+    </script>
+</body>
+
 </html>
