@@ -18,10 +18,21 @@
     <div id="app"></div>
     <script type="text/babel" data-presets="react" data-type="module">
         import { createRoot } from 'react-dom/client';
+
+        function Header() {
+            return <h1>Develop. Preview. Ship.</h1>;
+        }
+
+        function HomePage() {
+            return (
+                <div>
+                    <Header />
+                </div>
+            );
+        }
+
         const app = document.getElementById('app');
         const root = createRoot(app);
-        root.render(<h1>Develop. Preview. Ship.</h1>);
+        root.render(<HomePage />);
     </script>
 </body>
-
-</html>
